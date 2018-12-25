@@ -1,4 +1,4 @@
-# home-management
+# Home Management
 Manage my house and home
 
 A simple solution for managing home

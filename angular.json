@@ -1,0 +1,848 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "apps-home-expense": {
+      "root": "apps/apps/home-expense/",
+      "sourceRoot": "apps/apps/home-expense/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/apps/home-expense",
+            "index": "apps/apps/home-expense/src/index.html",
+            "main": "apps/apps/home-expense/src/main.ts",
+            "polyfills": "apps/apps/home-expense/src/polyfills.ts",
+            "tsConfig": "apps/apps/home-expense/tsconfig.app.json",
+            "assets": [
+              "apps/apps/home-expense/src/favicon.ico",
+              "apps/apps/home-expense/src/assets"
+            ],
+            "styles": ["apps/apps/home-expense/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/apps/home-expense/src/environments/environment.ts",
+                  "with": "apps/apps/home-expense/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "apps-home-expense:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "apps-home-expense:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "apps-home-expense:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/apps/home-expense/src/test.ts",
+            "polyfills": "apps/apps/home-expense/src/polyfills.ts",
+            "tsConfig": "apps/apps/home-expense/tsconfig.spec.json",
+            "karmaConfig": "apps/apps/home-expense/karma.conf.js",
+            "styles": ["apps/apps/home-expense/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/apps/home-expense/src/favicon.ico",
+              "apps/apps/home-expense/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/apps/home-expense/tsconfig.app.json",
+              "apps/apps/home-expense/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "apps-home-expense-e2e": {
+      "root": "apps/apps/home-expense-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/apps/home-expense-e2e/protractor.conf.js",
+            "devServerTarget": "apps-home-expense:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "apps-home-expense:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/apps/home-expense-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-inventory": {
+      "root": "apps/home-inventory/",
+      "sourceRoot": "apps/home-inventory/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/home-inventory",
+            "index": "apps/home-inventory/src/index.html",
+            "main": "apps/home-inventory/src/main.ts",
+            "polyfills": "apps/home-inventory/src/polyfills.ts",
+            "tsConfig": "apps/home-inventory/tsconfig.app.json",
+            "assets": [
+              "apps/home-inventory/src/favicon.ico",
+              "apps/home-inventory/src/assets"
+            ],
+            "styles": ["apps/home-inventory/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-inventory/src/environments/environment.ts",
+                  "with": "apps/home-inventory/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "home-inventory:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-inventory:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-inventory:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/home-inventory/src/test.ts",
+            "polyfills": "apps/home-inventory/src/polyfills.ts",
+            "tsConfig": "apps/home-inventory/tsconfig.spec.json",
+            "karmaConfig": "apps/home-inventory/karma.conf.js",
+            "styles": ["apps/home-inventory/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/home-inventory/src/favicon.ico",
+              "apps/home-inventory/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/home-inventory/tsconfig.app.json",
+              "apps/home-inventory/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-inventory-e2e": {
+      "root": "apps/home-inventory-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/home-inventory-e2e/protractor.conf.js",
+            "devServerTarget": "home-inventory:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-inventory:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/home-inventory-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-budget": {
+      "root": "apps/home-budget/",
+      "sourceRoot": "apps/home-budget/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/home-budget",
+            "index": "apps/home-budget/src/index.html",
+            "main": "apps/home-budget/src/main.ts",
+            "polyfills": "apps/home-budget/src/polyfills.ts",
+            "tsConfig": "apps/home-budget/tsconfig.app.json",
+            "assets": [
+              "apps/home-budget/src/favicon.ico",
+              "apps/home-budget/src/assets"
+            ],
+            "styles": ["apps/home-budget/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-budget/src/environments/environment.ts",
+                  "with": "apps/home-budget/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "home-budget:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-budget:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-budget:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/home-budget/src/test.ts",
+            "polyfills": "apps/home-budget/src/polyfills.ts",
+            "tsConfig": "apps/home-budget/tsconfig.spec.json",
+            "karmaConfig": "apps/home-budget/karma.conf.js",
+            "styles": ["apps/home-budget/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/home-budget/src/favicon.ico",
+              "apps/home-budget/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/home-budget/tsconfig.app.json",
+              "apps/home-budget/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-budget-e2e": {
+      "root": "apps/home-budget-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/home-budget-e2e/protractor.conf.js",
+            "devServerTarget": "home-budget:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-budget:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/home-budget-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-needs": {
+      "root": "apps/home-needs/",
+      "sourceRoot": "apps/home-needs/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/home-needs",
+            "index": "apps/home-needs/src/index.html",
+            "main": "apps/home-needs/src/main.ts",
+            "polyfills": "apps/home-needs/src/polyfills.ts",
+            "tsConfig": "apps/home-needs/tsconfig.app.json",
+            "assets": [
+              "apps/home-needs/src/favicon.ico",
+              "apps/home-needs/src/assets"
+            ],
+            "styles": ["apps/home-needs/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-needs/src/environments/environment.ts",
+                  "with": "apps/home-needs/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "home-needs:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-needs:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-needs:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/home-needs/src/test.ts",
+            "polyfills": "apps/home-needs/src/polyfills.ts",
+            "tsConfig": "apps/home-needs/tsconfig.spec.json",
+            "karmaConfig": "apps/home-needs/karma.conf.js",
+            "styles": ["apps/home-needs/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/home-needs/src/favicon.ico",
+              "apps/home-needs/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/home-needs/tsconfig.app.json",
+              "apps/home-needs/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-needs-e2e": {
+      "root": "apps/home-needs-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/home-needs-e2e/protractor.conf.js",
+            "devServerTarget": "home-needs:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-needs:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/home-needs-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-events": {
+      "root": "apps/home-events/",
+      "sourceRoot": "apps/home-events/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/home-events",
+            "index": "apps/home-events/src/index.html",
+            "main": "apps/home-events/src/main.ts",
+            "polyfills": "apps/home-events/src/polyfills.ts",
+            "tsConfig": "apps/home-events/tsconfig.app.json",
+            "assets": [
+              "apps/home-events/src/favicon.ico",
+              "apps/home-events/src/assets"
+            ],
+            "styles": ["apps/home-events/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-events/src/environments/environment.ts",
+                  "with": "apps/home-events/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "home-events:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-events:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-events:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/home-events/src/test.ts",
+            "polyfills": "apps/home-events/src/polyfills.ts",
+            "tsConfig": "apps/home-events/tsconfig.spec.json",
+            "karmaConfig": "apps/home-events/karma.conf.js",
+            "styles": ["apps/home-events/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/home-events/src/favicon.ico",
+              "apps/home-events/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/home-events/tsconfig.app.json",
+              "apps/home-events/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-events-e2e": {
+      "root": "apps/home-events-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/home-events-e2e/protractor.conf.js",
+            "devServerTarget": "home-events:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-events:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/home-events-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-expense": {
+      "root": "apps/home-expense/",
+      "sourceRoot": "apps/home-expense/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/home-expense",
+            "index": "apps/home-expense/src/index.html",
+            "main": "apps/home-expense/src/main.ts",
+            "polyfills": "apps/home-expense/src/polyfills.ts",
+            "tsConfig": "apps/home-expense/tsconfig.app.json",
+            "assets": [
+              "apps/home-expense/src/favicon.ico",
+              "apps/home-expense/src/assets"
+            ],
+            "styles": ["apps/home-expense/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-expense/src/environments/environment.ts",
+                  "with": "apps/home-expense/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "home-expense:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-expense:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-expense:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/home-expense/src/test.ts",
+            "polyfills": "apps/home-expense/src/polyfills.ts",
+            "tsConfig": "apps/home-expense/tsconfig.spec.json",
+            "karmaConfig": "apps/home-expense/karma.conf.js",
+            "styles": ["apps/home-expense/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/home-expense/src/favicon.ico",
+              "apps/home-expense/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/home-expense/tsconfig.app.json",
+              "apps/home-expense/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-expense-e2e": {
+      "root": "apps/home-expense-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/home-expense-e2e/protractor.conf.js",
+            "devServerTarget": "home-expense:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-expense:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/home-expense-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-auth": {
+      "root": "apps/home-auth/",
+      "sourceRoot": "apps/home-auth/src",
+      "projectType": "application",
+      "prefix": "home-management",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/home-auth",
+            "index": "apps/home-auth/src/index.html",
+            "main": "apps/home-auth/src/main.ts",
+            "polyfills": "apps/home-auth/src/polyfills.ts",
+            "tsConfig": "apps/home-auth/tsconfig.app.json",
+            "assets": [
+              "apps/home-auth/src/favicon.ico",
+              "apps/home-auth/src/assets"
+            ],
+            "styles": ["apps/home-auth/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-auth/src/environments/environment.ts",
+                  "with": "apps/home-auth/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "home-auth:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-auth:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-auth:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/home-auth/src/test.ts",
+            "polyfills": "apps/home-auth/src/polyfills.ts",
+            "tsConfig": "apps/home-auth/tsconfig.spec.json",
+            "karmaConfig": "apps/home-auth/karma.conf.js",
+            "styles": ["apps/home-auth/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/home-auth/src/favicon.ico",
+              "apps/home-auth/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/home-auth/tsconfig.app.json",
+              "apps/home-auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "home-auth-e2e": {
+      "root": "apps/home-auth-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/home-auth-e2e/protractor.conf.js",
+            "devServerTarget": "home-auth:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-auth:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/home-auth-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "defaultProject": "apps-home-expense"
+}

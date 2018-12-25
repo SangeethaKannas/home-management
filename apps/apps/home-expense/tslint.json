@@ -1,0 +1,7 @@
+{
+  "extends": "../../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "home-management", "camelCase"],
+    "component-selector": [true, "element", "home-management", "kebab-case"]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "npmScope": "home-management",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "home-inventory": {
+      "tags": ["inventory", "scss", "typescript"]
+    },
+    "home-inventory-e2e": {
+      "tags": []
+    },
+    "home-budget": {
+      "tags": []
+    },
+    "home-budget-e2e": {
+      "tags": []
+    },
+    "home-needs": {
+      "tags": []
+    },
+    "home-needs-e2e": {
+      "tags": []
+    },
+    "home-events": {
+      "tags": []
+    },
+    "home-events-e2e": {
+      "tags": []
+    },
+    "home-expense": {
+      "tags": []
+    },
+    "home-expense-e2e": {
+      "tags": []
+    },
+    "home-auth": {
+      "tags": []
+    },
+    "home-auth-e2e": {
+      "tags": []
+    }
+  }
+}

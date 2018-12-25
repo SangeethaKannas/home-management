@@ -1,0 +1,20 @@
+<form #loginForm="ngForm" class="col2 s12 white" (ngSubmit)="OnLogin(UserName.value, Password.value)">
+  <div class="row">
+      <div class="input-field col s12">
+          <i class="maeterial-icons prefix">account_name</i>
+          <input type="text" #userName ngModel name="UserName" placeholder="Username" required>
+      </div>
+  </div>
+  <div class="row">
+      <div class="input-field col s12">
+          <i class="maeterial-icons prefix">vpn_key</i>
+          <input type="text" #password ngModel name="Password" placeholder="Password" required>
+      </div>
+  </div>
+  <div class="row">
+      <div class="input-field col s12">
+          <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+      </div>
+  </div>
+
+</form>

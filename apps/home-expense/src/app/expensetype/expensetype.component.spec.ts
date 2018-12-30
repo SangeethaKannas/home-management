@@ -8,9 +8,8 @@ describe('ExpensetypeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExpensetypeComponent ]
-    })
-    .compileComponents();
+      declarations: [ExpensetypeComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,8 +22,5 @@ describe('ExpensetypeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should update name and remarks', () => {
-    
-  });
-
+  it('should update name and remarks', () => {});
 });

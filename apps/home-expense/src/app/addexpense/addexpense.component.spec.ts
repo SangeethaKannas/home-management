@@ -8,9 +8,8 @@ describe('AddexpenseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddexpenseComponent ]
-    })
-    .compileComponents();
+      declarations: [AddexpenseComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

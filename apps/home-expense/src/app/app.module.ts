@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
@@ -10,7 +10,12 @@ import { ExpenseComponent } from './expense/expense.component';
 import { AddexpenseComponent } from './addexpense/addexpense.component';
 
 @NgModule({
-  declarations: [AppComponent, ExpensetypeComponent, ExpenseComponent, AddexpenseComponent],
+  declarations: [
+    AppComponent,
+    ExpensetypeComponent,
+    ExpenseComponent,
+    AddexpenseComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,

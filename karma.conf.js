@@ -4,6 +4,11 @@
 const { join } = require('path');
 const { constants } = require('karma');
 
+let _browsers = ['Chrome']
+if (process.env.CI_SERVER) {
+  _browsers = ['ChromeHeadless'];
+}
+
 module.exports = () => {
   return {
     basePath: '',
@@ -28,7 +33,18 @@ module.exports = () => {
     colors: true,
     logLevel: constants.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: true
+    browsers: _browsers,
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--headless',
+          '--disable-gpu',
+          '--no-sandbox',
+          '--remote-debugging-port=9222'
+        ]
+      }
+    },
+    singleRun: fakse
   };
 };

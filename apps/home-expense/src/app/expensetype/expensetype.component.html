@@ -1,7 +1,13 @@
 <div class="container">
   <ul>
-    <li *ngFor="let expenseType of expenseTypes" (click)="edit(expenseType);submitted=false;">
-      <span>{{expenseType.id}}</span>{{expenseType.name}}
+    <li
+      [@moveInLeft]
+      *ngFor="let expenseType of expenseTypes"
+      (click)="edit(expenseType); submitted = false"
+    >
+      <span>{{ expenseType.id }}</span
+      >{{ expenseType.name }}
+      <i (click)="deleteItem(expenseType)" class="material-icons">delete</i>
     </li>
   </ul>
 </div>
@@ -9,27 +15,42 @@
 <div class="container" [hidden]="submitted">
   <h1>Expense Type</h1>
 
-  <form #expenseTypeForm="ngForm" (ngSubmit)="onSubmit()" >
-
+  <form
+    #expenseTypeForm="ngForm"
+    (ngSubmit)="onSubmit(); expenseTypeForm.resetForm()"
+  >
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" 
-      [(ngModel)]="expenseTypeModel.name" name="name" required #name="ngModel">
-      <div [hidden]="name.valid || name.pristine"
-          class="alert alert-danger">
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="expenseTypeModel.name"
+        name="name"
+        required
+        #name="ngModel"
+      />
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
         Name is required
       </div>
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <input type="text" class="form-control" id="description"
-      [(ngModel)]="expenseTypeModel.description" name="description" 
-      >
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="expenseTypeModel.description"
+        name="description"
+      />
     </div>
 
-    <button type="submit" class="btn btn-success"  [disabled]="expenseTypeForm.form.invalid"
-     (click)="expenseTypeForm.reset()">Submit</button>
-
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="expenseTypeForm.form.invalid"
+    >
+      Submit
+    </button>
   </form>
-
 </div>

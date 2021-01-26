@@ -1,0 +1,19 @@
+{
+  "output" : {
+     "MRF Gold"  : " 0.5", 
+     "Distemper Tractor" : "20kg",
+     "Apex Sultry" : "40 Litre - 20 litre 3101",
+     "Asian outer primer" : "40 litre",
+     "Matt finish" : {
+       "ACE Emulsion" : "178",
+       "Wall mater": "120"
+     
+     }
+  "input" : { 
+  "Tractor emulsion" : "149",
+  "Apcolite premium emeuls": "270",
+  "Tractor Acrylic Distemper" : "70",
+  "ACE Emulsion" : "178",
+  "Decoprime cement primer":  "185"
+  }
+}
